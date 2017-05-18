@@ -7,7 +7,7 @@
    source:
      type: Git
      git:
-       uri: https://github.com/schulthess/jenkins-techlab
+       uri: https://github.com/jschulthess/jenkins-techlab
        ref: lab-17.2
    strategy:
      type: JenkinsPipeline
