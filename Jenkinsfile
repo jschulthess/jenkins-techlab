@@ -1,7 +1,7 @@
 @Library('jenkins-techlab-libraries') _
 
 pipeline {
-    agent { label env.JOB_NAME.split('/')[0] }
+    agent { label 'jschulthess' }
     options {
         buildDiscarder(logRotator(numToKeepStr: '5'))
         timeout(time: 10, unit: 'MINUTES')
