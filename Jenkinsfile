@@ -28,7 +28,7 @@ pipeline {
         success {
             //rocketSend avatar: 'https://chat.puzzle.ch/emoji-custom/success.png', channel: 'jenkins-techlab', message: "Build success - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", rawMessage: true
             emailext body: 'Build success jenkins-techlab lab-10.3', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Build Success', to: 'schulthess@puzzle.ch'
-            notifyPuzzleChat('jenkins-techlab','Success')
+            notifyPuzzleChat('jenkins-techlab')
         }
         unstable {
             //rocketSend avatar: 'https://chat.puzzle.ch/emoji-custom/unstable.png', channel: 'jenkins-techlab', message: "Build unstable - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", rawMessage: true 
