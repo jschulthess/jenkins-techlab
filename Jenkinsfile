@@ -1,3 +1,5 @@
+@Library('jenkins-techlab-libraries') _
+
 pipeline {
     agent { label env.JOB_NAME.split('/')[0] }
     options {
