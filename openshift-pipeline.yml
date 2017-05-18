@@ -1,0 +1,15 @@
+ apiVersion: v1
+ kind: BuildConfig
+ metadata:
+   name: jschulthess-pipeline
+ spec:
+   runPolicy: Serial
+   source:
+     type: Git
+     git:
+       uri: https://github.com:jschulthess/jenkins-techlab
+       ref: lab-17.2
+   strategy:
+     type: JenkinsPipeline
+     jenkinsPipelineStrategy:
+       jenkinsfilePath: Jenkinsfile
