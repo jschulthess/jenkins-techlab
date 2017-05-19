@@ -61,7 +61,8 @@ pipeline {
     }
     post {
         always {
-            notifyPuzzleChat()
+            //notifyPuzzleChat()
+            emailext body: 'Build success jenkins-techlab lab-17.2', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Build Success', to: 'schulthess@puzzle.ch'
         }
     }
 }
