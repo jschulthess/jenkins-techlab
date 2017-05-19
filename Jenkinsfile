@@ -12,7 +12,8 @@ try {
         timeout(time: 10, unit: 'MINUTES') {
             env.ARTIFACT = "${env.JOB_NAME.split('/')[0]}-hello"
             env.REPO_URL = 'https://artifactory.puzzle.ch/artifactory/ext-release-local'
-            node(env.JOB_NAME.split('/')[0]) {
+            //node(env.JOB_NAME.split('/')[0]) {
+            node {
                 stage('Build') {
                     try {
                         withCredentials([file(credentialsId: 'm2_settings', variable: 'M2_SETTINGS'), usernameColonPassword(credentialsId: 'jenkins-artifactory', variable: 'ARTIFACTORY'), file(credentialsId: 'known_hosts', variable: 'KNOWN_HOSTS')]) {  // Credentials Binding Plugin
